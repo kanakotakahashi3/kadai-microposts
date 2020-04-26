@@ -8,13 +8,13 @@ class UserFollowController extends Controller
 {
     public function store(Request $request, $id)
     {
-        \Auth::user()->favorite($id);
+        \Auth::user()->follow($id);
         return back();
     }
 
     public function destroy($id)
     {
-        \Auth::user()->unfavorite($id);
+        \Auth::user()->unfollow($id);
         return back();
     }
 }

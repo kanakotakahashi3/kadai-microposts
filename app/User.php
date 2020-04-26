@@ -133,4 +133,10 @@ class User extends Authenticatable
         }
 
     }
+     public function is_favorite($micropostsId)
+    {
+        
+        return $this->favorites()->where('microposts_id', $micropostsId)->exists();
+    }
+
 }

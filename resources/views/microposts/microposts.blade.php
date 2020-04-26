@@ -11,11 +11,11 @@
                 </div>
                 <div>
                     @if (Auth::id() == $micropost->user_id)
-                       @include('user_favorite.favorite_button', ['user' => $user])
                         {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
                         {!! Form::close() !!}
                     @endif
+                    @include('user_favorite.favorite_button', ['micropost' => $micropost])
                 </div>
                
             </div>
